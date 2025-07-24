@@ -41,6 +41,7 @@ export async function fetchSingleProduct(productId: string) {
     return product
 }
 
+
 const getAuthUser = async () => {
     const user = await currentUser()
     if (!user) {

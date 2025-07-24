@@ -7,25 +7,24 @@ import ImageInput from "@/components/form/ImageInput";
 import PriceInput from "@/components/form/PriceInput";
 import SubmitButton from "@/components/form/SubmitButton";
 import TextAreaInput from "@/components/form/TextAreaInput";
+import { redirect } from "next/navigation";
 import {
   fetchSingleProduct,
   updateProductImageAction,
   updatProductAction,
 } from "@/utils/action";
 
-type Props = {
+type Params = {
   params: {
     id: string;
   };
 };
 
-const EditProductPage = async ({ params }: Props): Promise<JSX.Element> => {
+export default async function EditProductPage({ params }: Params) {
   const { id } = params;
-  const product = await fetchSingleProduct(id);
 
-  if (!product) {
-    throw new Error("Product not found");
-  }
+  // جلب المنتج
+  const product = await fetchSingleProduct(id);
 
   const { name, description, price, featured, image } = product;
 
@@ -52,7 +51,6 @@ const EditProductPage = async ({ params }: Props): Promise<JSX.Element> => {
               label="Product Name"
               defaultValue={name}
             />
-
             <PriceInput name="price" defaultValue={price} />
             <ImageInput name="image" />
             <TextAreaInput
@@ -76,6 +74,4 @@ const EditProductPage = async ({ params }: Props): Promise<JSX.Element> => {
       </div>
     </section>
   );
-};
-
-export default EditProductPage;
+}
