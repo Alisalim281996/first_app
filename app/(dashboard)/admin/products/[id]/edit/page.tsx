@@ -73,6 +73,7 @@ export default async function EditProductPage({
     </section>
   );
 }
+export const dynamic = "force-dynamic";
 export async function generateStaticParams() {
   return [];
 }
