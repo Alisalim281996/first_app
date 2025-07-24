@@ -14,16 +14,15 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
-interface PageProps {
+// ✅ تعديل نوع البراميتر مباشرة بدلًا من PageProps
+export default async function EditProductPage({
+  params,
+}: {
   params: { id: string };
-}
+}) {
+  const { id } = params;
 
-export default async function EditProductPage(props: PageProps) {
-  const { id } = props.params;
-
-  // جلب المنتج
   const product = await fetchSingleProduct(id);
-
   const { name, description, price, featured, image } = product;
 
   return (
@@ -73,4 +72,3 @@ export default async function EditProductPage(props: PageProps) {
     </section>
   );
 }
-
