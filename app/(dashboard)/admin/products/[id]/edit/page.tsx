@@ -14,16 +14,12 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
-type PageProps = {
-  params: {
-    id: string;
-  };
-};
+interface PageProps {
+  params: { id: string };
+}
 
-export default async function EditProductPage({
-  params,
-}: PageProps) {
-  const { id } = params;
+export default async function EditProductPage(props: PageProps) {
+  const { id } = props.params;
 
   // جلب المنتج
   const product = await fetchSingleProduct(id);
@@ -77,7 +73,4 @@ export default async function EditProductPage({
     </section>
   );
 }
-export const dynamic = "force-dynamic";
-export async function generateStaticParams() {
-  return [];
-}
+
