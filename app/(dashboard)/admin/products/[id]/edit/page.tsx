@@ -13,7 +13,13 @@ import {
 } from "@/utils/action";
 import React from "react";
 
-const EditProductPage = async ({ params }: { params: { id: string } }) => {
+type Props = {
+  params: {
+    id: string;
+  };
+};
+
+const EditProductPage = async ({ params }: Props) => {
   const { id } = params;
   const product = await fetchSingleProduct(id);
   const { name, description, price, featured, image } = product;
@@ -21,7 +27,6 @@ const EditProductPage = async ({ params }: { params: { id: string } }) => {
     <section>
       <h1 className="text-2xl font-semibold mb-8 capitalize">Create Product</h1>
       <div className="border p-8 rounded-md">
-
         <ImageInputContiner
           action={updateProductImageAction}
           name={name}
