@@ -13,7 +13,6 @@ const FeaturedProducts = async () => {
   if (productFeatcure.length === 0)
     return <EmptyList title="Add New Products" />;
 
-  // if not zero we return that  
   return (
     <div className="pt-24">
       <SectionTitle text="featured products" />

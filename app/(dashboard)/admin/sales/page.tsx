@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FavouritToogleForm = () => {
+const SalesPage = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const FavouritToogleForm = () => {
   )
 }
 
-export default FavouritToogleForm
+export default SalesPage

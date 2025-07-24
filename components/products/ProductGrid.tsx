@@ -7,7 +7,7 @@ import Image from "next/image";
 import { formatCurrency } from "@/utils/format";
 import FavoriteToggleButton from "./FavoriteToggleButton";
 
-const ProductGrid = ({ products }: { products: Product[] }) => {
+const ProductGrid = ({ products }: { products: (Product[]) }) => {
   return (
     <section className="pt-12 grid md:grid-cols-2 gap-4 lg:grid-cols-3">
       {products.map((product) => {

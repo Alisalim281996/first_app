@@ -14,6 +14,7 @@ const CartButton = () => {
     >
       <Link href={links.Cart.href}>
         <LuShoppingCart />
+        
         <span className="p-0 absolute -top-3 -right-3 bg-blue-500 text-white rounded-full w-6 h-6 flex justify-center items-center text-sm">
           {cartItems}
         </span>

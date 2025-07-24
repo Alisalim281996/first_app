@@ -21,7 +21,6 @@ const ProductsContainer = async ({
 
   return (
     <>
-      {/* header */}
       <section>
         <div className="flex justify-between items-center">
           <h4>

@@ -12,7 +12,6 @@ const ProductList = ({ products }: { products: Product[] }) => {
   
   return (
     <section className="mt-12 grid gap-y-4">
-      {/* card */}
       {products.map((product) => {
         const priceFormat = formatCurrency(product.price);
 
