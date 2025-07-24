@@ -1,4 +1,5 @@
 import React from "react";
+
 import ImageInputContiner from "@/components/admin/products/ImageInputContiner";
 import CheckBoxInput from "@/components/form/CheckBoxInput";
 import FormContiner from "@/components/form/FormContiner";
@@ -7,20 +8,17 @@ import ImageInput from "@/components/form/ImageInput";
 import PriceInput from "@/components/form/PriceInput";
 import SubmitButton from "@/components/form/SubmitButton";
 import TextAreaInput from "@/components/form/TextAreaInput";
-import { redirect } from "next/navigation";
 import {
   fetchSingleProduct,
   updateProductImageAction,
   updatProductAction,
 } from "@/utils/action";
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function EditProductPage({ params }: Params) {
+export default async function EditProductPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   const { id } = params;
 
   // جلب المنتج
@@ -74,4 +72,7 @@ export default async function EditProductPage({ params }: Params) {
       </div>
     </section>
   );
+}
+export async function generateStaticParams() {
+  return [];
 }
