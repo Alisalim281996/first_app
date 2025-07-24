@@ -14,7 +14,6 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
-// استخدم `any` فقط للوسيط، ولاتستخدم await مع params
 export default async function EditProductPage({ params }: any) {
   const id = params.id;
 

@@ -19,7 +19,7 @@ const ProductGrid = ({ products }: { products: (Product[]) }) => {
             <Link href={`${links.PRODUCTS.href}/${productId}`}>
               <Card className="transform group-hover:shadow-xl transition-shadow duration-500">
                 <CardContent>
-                  <div className="relative h-64 md:h-48 rounded overflow-hidden">
+                  <div className="relative h-64 md:h-48 rounded">
                     <Image
                       src={product.image}
                       alt="products_img"

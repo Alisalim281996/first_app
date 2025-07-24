@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="-hidden">
       <Hero />
       <Suspense fallback={<LoadingContainer />}>
         <FeaturedProducts />
