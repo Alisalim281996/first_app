@@ -1,3 +1,4 @@
+import React from "react";
 import ImageInputContiner from "@/components/admin/products/ImageInputContiner";
 import CheckBoxInput from "@/components/form/CheckBoxInput";
 import FormContiner from "@/components/form/FormContiner";
@@ -11,7 +12,6 @@ import {
   updateProductImageAction,
   updatProductAction,
 } from "@/utils/action";
-import React from "react";
 
 type Props = {
   params: {
@@ -19,13 +19,19 @@ type Props = {
   };
 };
 
-const EditProductPage = async ({ params }: Props) => {
+const EditProductPage = async ({ params }: Props): Promise<JSX.Element> => {
   const { id } = params;
   const product = await fetchSingleProduct(id);
+
+  if (!product) {
+    throw new Error("Product not found");
+  }
+
   const { name, description, price, featured, image } = product;
+
   return (
     <section>
-      <h1 className="text-2xl font-semibold mb-8 capitalize">Create Product</h1>
+      <h1 className="text-2xl font-semibold mb-8 capitalize">Edit Product</h1>
       <div className="border p-8 rounded-md">
         <ImageInputContiner
           action={updateProductImageAction}
@@ -57,7 +63,7 @@ const EditProductPage = async ({ params }: Props) => {
             <div className="mt-6">
               <CheckBoxInput
                 name="featured"
-                label="featured"
+                label="Featured"
                 defaultChecked={featured}
               />
             </div>
