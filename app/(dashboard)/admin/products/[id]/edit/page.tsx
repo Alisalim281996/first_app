@@ -14,13 +14,9 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
-export default async function EditProductPage({
-  params,
-}: {
-  // لا تعرّف نوع params بنفسك نهائيًا
-  params: any;
-}) {
-  const { id } = params;
+// استخدم `any` فقط للوسيط، ولاتستخدم await مع params
+export default async function EditProductPage({ params }: any) {
+  const id = params.id;
 
   const product = await fetchSingleProduct(id);
   const { name, description, price, featured, image } = product;
