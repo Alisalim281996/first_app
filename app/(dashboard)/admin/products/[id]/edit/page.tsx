@@ -14,11 +14,11 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
-// ✅ تعديل نوع البراميتر مباشرة بدلًا من PageProps
 export default async function EditProductPage({
   params,
 }: {
-  params: { id: string };
+  // لا تعرّف نوع params بنفسك نهائيًا
+  params: any;
 }) {
   const { id } = params;
 
