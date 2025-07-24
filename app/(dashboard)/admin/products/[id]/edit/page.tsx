@@ -14,11 +14,15 @@ import {
   updatProductAction,
 } from "@/utils/action";
 
+type PageProps = {
+  params: {
+    id: string;
+  };
+};
+
 export default async function EditProductPage({
   params,
-}: {
-  params: { id: string };
-}) {
+}: PageProps) {
   const { id } = params;
 
   // جلب المنتج
